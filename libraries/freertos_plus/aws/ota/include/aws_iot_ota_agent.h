@@ -401,6 +401,9 @@ typedef struct
 typedef struct OTA_FileContext
 {
     uint8_t * pucFilePath; /*!< Local file pathname. */
+#if defined(__CC_ARM)
+#pragma anon_unions
+#endif
     union
     {
         int32_t lFileHandle;    /*!< Device internal file pointer or handle.
